@@ -3,9 +3,10 @@
 class Character
 {
     public $name;
-    protected $lifePoints = 100;
+    protected $lifePoints = 130;
     public $damage = 15;
     public $immunity = false;
+    public $magicPoints = 0;
 
     public function __construct($name)
     {
@@ -48,4 +49,5 @@ class Character
         $this->immunity = false;
         return $this->immunity;
     }
+
 }

@@ -5,7 +5,7 @@ spl_autoload_register(function ($class_name) {
     require 'classes/' . $class_name . '.php';
 });
 
-$character1 = new Healer('Dende');
+$character1 = new SpellCaster('Black Goku');
 $character2 = new Warrior('Vegeta');
 $pnumb = 1;
 
@@ -23,7 +23,7 @@ $pnumb = 1;
     <title>Document</title>
 </head>
 <header>
-    <img src="./img/dfz.png" alt="">
+    <img  id="title"src="./img/dfz.png" alt="">
 </header>
 <body>
     <div id="characBand">
@@ -36,6 +36,38 @@ $pnumb = 1;
         <div  id="p1"class = "player"><?php echo $character1->name . " (" . $character1->class . ")"?></div>
         <div class= "player" id="p2"><?php echo $character2->name . " (" . $character2->class . ")"?></div>
     </div>
+    <div id="charinfos">
+        <div id="char1infos">
+            <div class="char1infos">
+            <img src="./img/pixelheart.png" class="icon" alt="">
+            <h6><?php echo $character1->maxHealth ;?></h6>
+            </div>
+            <div class="char1infos">
+                <img src="./img/pixelsword.png" class="icon" alt="">
+                <h6><?php echo $character1->damage ;?></h6>             
+            </div>
+            <div class="char1infos">
+                <img src="./img/pixelwand.png" class="icon wand" alt="">
+                <h6><?php echo $character1->magicPoints ;?></h6>             
+            </div>
+        </div>
+        <div id="char2infos">
+            <div class="char2infos">
+                <h6><?php echo $character2->maxHealth ;?></h6>
+                <img src="./img/pixelheart.png" class="icon" alt="">
+            </div>
+            <div class="char2infos">
+                <h6><?php echo $character2->damage ;?></h6>             
+                <img src="./img/pixelsword.png" class="icon" alt="">
+            </div>
+            <div class="char2infos">
+                <h6><?php echo $character2->magicPoints ;?></h6>             
+                <img src="./img/pixelwand.png" class="icon wand" alt="">
+            </div>
+        </div>
+        
+    </div>
+        
     <?php
          while ($character1->isAlive() && $character2->isAlive()){
                 echo '<p id =' . "n$pnumb>";

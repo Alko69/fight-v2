@@ -2,10 +2,17 @@
 
 class SpellCaster extends Character
 {
-    public $magicPoints = 50;
-    public $damage = 5;
+    
     public $class = 'SpellCaster';
 
+    public function __construct($name)
+    {
+        parent::__construct($name);
+        $this->maxHealth = 120;
+        $this->lifePoints = $this->maxHealth;
+        $this->magicPoints = 50;
+        $this->damage /=3;
+    }
 
     public function action($target) {
         $rand = rand(1, 100);
@@ -37,7 +44,7 @@ class SpellCaster extends Character
     }
 
     public function fist($target) {
-        $status = "$this->name n'a plus de magie et donne un coup de poing à $target->name !";
+        $status = "$this->name n'a plus de magie et donne un coup de poing à $target->name ! Il inflige $this->damage points de dégâts";
         if($target->immunity){
             $status = $status . "Mais il n'inflige aucun dégât.";
         }
