@@ -43,7 +43,7 @@ class Warrior extends Character
             $target->immunityLoss();
             $status = $status . "Mais il n'inflige aucun dégât";
         } else {
-            $target->$target->setLifePoints($this->damage+5);
+            $target->setLifePoints($this->damage+5);
             $status = $status . "Il reste $target->lifePoints points de vie à $target->name ! ";
         }
         return $status;

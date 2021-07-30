@@ -5,7 +5,7 @@ spl_autoload_register(function ($class_name) {
     require 'classes/' . $class_name . '.php';
 });
 
-$character1 = new SpellCaster('Black Goku');
+$character1 = new Healer('Dende');
 $character2 = new Warrior('Vegeta');
 $pnumb = 1;
 
